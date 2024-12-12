@@ -1,4 +1,4 @@
-Candid9 is a fun service for capturing candid photos in public and sharing back to the subject!
+Candid9 is a fun service for taking portaits of strangers in public and sharing back to the subject!
 
 Here is a sequence of events for how the app works:
 
@@ -14,7 +14,7 @@ Here is a sequence of events for how the app works:
 10. Subject is notified when photos are published. Watermarked photos can be viewed, watermark-free available for purchase!
 
 
-
+I have already sold 3 photos as a photographer, so it works! Most people's reaction to the ticket is like "oh, of course that's how it works, thank you!" 
 
 
 
