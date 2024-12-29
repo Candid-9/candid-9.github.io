@@ -14,7 +14,7 @@ It's intended to be used in a busy touristy area.
 
 </details
 
---- 
+<div/>
 
 <details>
 
@@ -39,6 +39,7 @@ I have already sold 3 photos as a photographer, so it works! Most people's react
 
 </details>
 
+<div/>
 
 <details>
 
@@ -48,7 +49,7 @@ I'm Mark Halonen, creator and owner of Candid9. I've been writing software for a
 
 </details
 
----
+<div/>
 
 <details>
 
