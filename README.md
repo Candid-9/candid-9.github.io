@@ -1,6 +1,13 @@
+Candid9 — You in the moment.
+
+[Login](https://app.candid9.com/)
+
+
 Candid9 is a fun service for taking portraits of strangers in public and sharing back to the subject!
 
-It's intended to be used in a busy touristy area.
+
+
+It's intended to be used in a busy touristy area. 
 
 <details>
   <summary>How it works as the subject</summary>
