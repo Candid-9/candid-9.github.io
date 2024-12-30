@@ -43,3 +43,5 @@ It's intended to be used in a busy touristy area.
   <summary>Screenshots</summary>
   <img src="https://github.com/user-attachments/assets/455d0b0e-219e-4357-ad28-ba8ea8c21fad" alt="Screenshot">
 </details>
+
+Pricing: Candid9 charges a modest fee on the transaction when a subject purchases a photo.
