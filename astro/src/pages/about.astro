@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About | Candid9" description="About Candid9">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<section>
+				<h2 class="section-title">About</h2>
+				<div class="content">
+					<p>
+						I'm Mark Halonen, creator of Candid9. I've been writing
+						software for a decade, and intend to keep Candid9 as a
+						low-cost, simple utility for photographers. I can be
+						reached at mark@candid9.com.
+					</p>
+				</div>
+				<div class="content">
+					<p>
+						I have personally taken many portaits using Candid9,
+						here are some more examples!
+					</p>
+					<img
+						alt="Photo2"
+						width="480"
+						height="620"
+						src="/assets/photo2.jpg"
+					/>
+					<img
+						alt="Photo3"
+						width="480"
+						height="620"
+						src="/assets/photo3.jpg"
+					/>
+					<img
+						alt="Photo4"
+						width="480"
+						height="620"
+						src="/assets/photo4.jpg"
+					/>
+				</div>
+				<div style={{ height: "100px" }}></div>
+			</section>
+		</main>
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

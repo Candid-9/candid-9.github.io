@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+---
+
+<BaseLayout title="Pricing" description="Learn about Candid9 pricing">
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<p>
+				Candid9 charges a modest transaction fee when a subject
+				purchases a photo. It's free to get started and there's no
+				subscription!
+			</p>
+		</main>
+	</div>
+</BaseLayout>
