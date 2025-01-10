@@ -35,7 +35,7 @@ const { title = "Candid9", description = "Candid9" } = Astro.props;
 			? "dark"
 			: "light";
 	};
-	const isDark = getThemePreference() === "dark";
+	const isDark = false; // getThemePreference() === "dark";
 	document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
 
 	if (typeof localStorage !== "undefined") {
