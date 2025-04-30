@@ -1,0 +1,178 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+---
+
+<BaseLayout title="Pricing" description="Learn about Candid9 pricing">
+    <div
+        class="stack gap-20"
+        style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+        }}
+    >
+        <h5 class="section-title">"iPhone Cameras are Actually Really Good"</h5>
+        <img
+            alt="Photo2"
+            style={{ width: "100%", maxWidth: "99%" }}
+            src="/assets/golf.jpg"
+        />
+    </div>
+
+    <div
+        class="stack gap-20"
+        style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+        }}
+    >
+        <div
+            class="content"
+            style={{
+                maxWidth: `800px`,
+                marginTop: `90px`,
+            }}
+        >
+            <p>
+                Ever wonder why you never see a smartphone photo printed and
+                framed on the wall? This post will dive into exactly why.
+                <div></div>
+                These photos look similar at a glance, but there are some key differences
+                that seem small but are actually very sensitive to our perception
+                of humans:
+                <ul>
+                    <li>
+                        The fish eye iPhone lens creates distortion, look at the
+                        feet of the pink player. If the feet are distorted on
+                        the bottom, the heads are also distorted on top. There's
+                        also distortion of the players on the edges who appear
+                        to be leaning toward the center in the iPhone photo.
+                    </li>
+                    <li>
+                        Compare the jawlines (important!) of the players. The
+                        iPhone photo is much less flattering. Real cameras
+                        capture shadow more accurately. An iPhone does lots of
+                        computation to try to make everything well-lit, but it
+                        ruins important facial features in the process.
+                    </li>
+                    <li>
+                        The blurred background of the right photo makes the
+                        players "pop". This is called bokeh. The landscape is
+                        also much more accurate to human perception, again due
+                        to fish-eye distortion of the iPhone camera.
+                    </li>
+                </ul>
+
+                Let's take a look at an individual player:
+
+                <img
+                    alt="Photo2"
+                    style={{
+                        width: "100%",
+                        maxWidth: "99%",
+                        maxHeight: `700px`,
+                        objectFit: "contain",
+                    }}
+                    src="/assets/vertical_player.jpg"
+                />
+
+                More things to notice:
+
+                <ul>
+                    <li>
+                        in the iPhone photo, the player is "leaning". His (long)
+                        feet are on the left and his head is on the right of the
+                        image. In the right image, the image accurately portays
+                        his balanced and confident stance.
+                    </li>
+                    <li>
+                        The players body is much more flattering in the right
+                        image. His chest and shoulders look larger compared to
+                        the "stumpy" appearance on the left.
+                    </li>
+                    <li>
+                        The jawline is much more flattering in the right image.
+                        The iPhone image almost entirely deletes the jawline on
+                        the shaded side of his face.
+                    </li>
+                </ul>
+
+                Off with their heads!
+            </p>
+        </div>
+        <img
+            alt="Photo2"
+            style={{
+                width: "100%",
+                maxWidth: "99%",
+                maxHeight: `700px`,
+                objectFit: "contain",
+            }}
+            src="/assets/heads.jpg"
+        />
+        <div
+            style={{
+                maxWidth: `800px`,
+                marginTop: `0px`,
+            }}
+        >
+            Looking into their headshots in particular here, notice the
+            following:
+
+            <ul>
+                <li>
+                    The player in pink has natural color in his cheeks in the
+                    bottom photo, but the iPhone photo puts it through the
+                    computational mixer and loses this entirely.
+                </li>
+                <li>
+                    The iPhone fails to accurately capture the golden hour sun
+                    in the hair of the players.
+                </li>
+            </ul>
+
+            I am sure there are many more differences that I am not able to see.
+            All these details might seem minor, but the human eye is incredibly
+            sensitive when perceiving other humans.
+
+            <div></div>
+            So this is why you don't see iPhone photos framed on walls. It's also
+            why top brands like Tom Brady and the Masters never post iPhone photos.
+
+            <div></div>
+
+            Most photos are of people, but I'll add a couple more photos that
+            show the distortion inflicted by iPhone cameras:
+        </div>
+
+        <img
+            alt="Photo2"
+            style={{
+                width: "100%",
+                maxWidth: "99%",
+                maxHeight: `700px`,
+                objectFit: "contain",
+            }}
+            src="/assets/buildings.jpg"
+        />
+
+        <img
+            alt="Photo2"
+            style={{
+                width: "100%",
+                maxWidth: "99%",
+                maxHeight: `700px`,
+                objectFit: "contain",
+            }}
+            src="/assets/cars.jpg"
+        />
+    </div>
+</BaseLayout>
