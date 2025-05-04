@@ -1,0 +1,102 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+---
+
+<BaseLayout title="Golf" description="Learn about Candid9 pricing">
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <p>
+                Recently I went on a golf trip to Nevada and golfed Wolf Creek.
+                The starter made a kind gesture: he asked us if we wanted a
+                group photo on the first tee while we were waiting. Of course we
+                obliged, but the result was an iPhone photo that just never
+                comes out great. I am a programmer and photographer, so I built
+                a tool called Candid9 that allows a golf course to sell
+                professional photos. Here's an example:
+            </p>
+            <img
+                alt="Photo2"
+                style={{ maxHeight: "80%", maxWidth: "800px" }}
+                src="/assets/first_tee.jpg"
+            />
+
+            <p>
+                Golfers love getting this photo. They are dressed nicely, with
+                their best friends, and playing the sport they love. It's also
+                the first tee so they haven't been reminded just how bad their
+                short game is. They might have even travelled for hours to golf
+                a beautiful course. Yet they rarely get anything better than an
+                iPhone photo, which simply cannot compete with a real camera.
+                The fact that the golf course is initiating is important too --
+                many groups do not want to be bothersome and ask someone to take
+                their photo.
+            </p>
+
+            <p>
+                Take a look around your pro shop. How many iPhone photos are
+                framed on the walls? None. Candid9 gives golf courses the
+                ability to send golfers home with wallhanger photos, which
+                generates revenue, satisfies customers, and provides further
+                marketing for the course when golfers share their photos online.
+            </p>
+
+            <p>
+                Candid9 is a very simple and cheap tool, only charging a 5% fee
+                on transactions. The golf course keeps 95% of photo revenue!
+                Your starter can take the photos, minimizing extra labor
+                required.
+            </p>
+
+            <p>
+                To get started, watch the video on the <a
+                    style={{ color: "blue" }}
+                    aria-current={null}
+                    class="link"
+                    href="/">homepage</a
+                > (not specific to golf but works the same) and head to the <a
+                    style={{ color: "blue" }}
+                    aria-current={null}
+                    class="link"
+                    href="https://app.candid9.com/">register</a
+                > page to create an account. Here's the full list of what you'll
+                need:
+
+                <ol>
+                    <li>
+                        A camera. What I use is a <a
+                            style={{ color: "blue" }}
+                            aria-current={null}
+                            class="link"
+                            href="https://www.bhphotovideo.com/c/product/1453768-REG/sony_ilce_6400_b_alpha_a6400_mirrorless_digital.html"
+                            >Sony A6400 camera body</a
+                        > and a
+                        <a
+                            style={{ color: "blue" }}
+                            aria-current={null}
+                            class="link"
+                            href="https://www.bhphotovideo.com/c/product/1234027-REG/sigma_302965_30mm_f_1_4_dc_dn.html"
+                            >Sigma 30mm f/1.4 lens</a
+                        >. This comes out to $1200.
+                    </li>
+                    <li>
+                        A computer that can read an SD card from the camera.
+                    </li>
+                    <li>Image editing software. I use Adobe Lightroom.</li>
+                    <li>
+                        A bank account that you can connect to Candid9 via
+                        Stripe to receive payouts.
+                    </li>
+                    <li>A printer, some thick paper, and scissors.</li>
+                    <li>A golf course!</li>
+                </ol>
+            </p>
+        </main>
+    </div>
+</BaseLayout>
