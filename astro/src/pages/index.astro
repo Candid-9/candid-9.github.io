@@ -24,11 +24,53 @@ import Skills from "../components/Skills.astro";
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
-				<Hero
-					title="Candid9"
-					tagline="Photo sharing for event photographers"
-					align="start"
-				/>
+				<div>
+					<h3 style={{ paddingBottom: `10px` }}>
+						Upsell Photography at your Venue
+					</h3>
+					<p>
+						Use Candid9 at your venue (golf course, resort,
+						restaurant, zoo, concert, etc) to sell photos to your
+						guests. This results in:
+
+						<ul style={{ marginTop: `5px`, marginBottom: `5px` }}>
+							<li>Increased revenue</li>
+							<li>Elevated guest experience</li>
+							<li>
+								Marketing of your venue when guests post/frame
+								the awesome photos
+							</li>
+						</ul>
+						<p style={{ marginBottom: `5px` }}>
+							If your guests are currently leaving with only
+							iPhone photos, there's room for improvement!
+						</p>
+
+						<p style={{ marginBottom: `5px` }}>
+							Candid9 makes it as easy as humanly possible to
+							share and sell photos -- all you do is take their
+							photo, take a photo of a ticket, and hand them the
+							ticket. No collecting emails or phone numbers. The
+							slowest part is gathering the group for the photo
+							which is unavoidable.
+						</p>
+						<p style={{ marginBottom: `5px` }}>
+							Groups also LOVE when someone else initiates the
+							photo, as it relieves them of the burden of
+							pestering a stranger to take their photo.
+						</p>
+						<p style={{ marginBottom: `5px` }}>
+							After taking photos of 1 or more groups, you will
+							later edit the photos and easily upload to Candid9
+							where you can set the price. It takes about 2
+							minutes per photo once you get in a groove.
+						</p>
+						<p style={{ marginBottom: `5px` }}>
+							Candid9 is cheap, only costing 5% of the photo
+							price! So if you sell a photo for $20, you keep $19.
+						</p>
+					</p>
+				</div>
 
 				<img
 					alt="Photo1"
@@ -37,31 +79,14 @@ import Skills from "../components/Skills.astro";
 					src="/assets/photo1.jpg"
 				/>
 			</header>
-
-			<div class="content">
-				<p class="tagline">
-					When a guest asks "can you send me the photo?", Candid9 is
-					the answer!
-				</p>
-			</div>
 		</div>
 
 		<div class="wrapper">
-			<section>
-				<h4 class="section-title">Video Demo</h4>
-
-				<div style="padding:56.25% 0 0 0;position:relative;">
-					<iframe
-						width="100%"
-						height="500px"
-						src="https://player.vimeo.com/video/1048222289?h=275dfabfe3&badge=0&autopause=0&player_id=0&app_id=58479"
-						frameborder="0"
-						allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-						style="position:absolute;top:0;left:0;width:100%;height:100%;"
-						title="How to Candid9"></iframe>
-				</div><script src="https://player.vimeo.com/api/player.js"
-				></script>
-			</section>
+			<img
+				alt="Photo2"
+				style={{ maxHeight: "80%", width: "100%", maxWidth: "100%" }}
+				src="/assets/golf_group.jpg"
+			/>
 		</div>
 
 		<div class="wrapper">
@@ -72,8 +97,7 @@ import Skills from "../components/Skills.astro";
 					<ol>
 						<li>
 							Photographer approaches and says "Hello! I'm the
-							photographer. This would make a great photo, can I
-							take this photo and I will share it with you also?"
+							photographer. Do you guys want a group photo?"
 						</li>
 						<li>Subject says "Yes!"</li>
 						<li>Photographer takes photos.</li>
