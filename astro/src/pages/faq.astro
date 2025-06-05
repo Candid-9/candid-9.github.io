@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+---
+
+<BaseLayout title="Pricing" description="Learn about Candid9 pricing">
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <h3>FAQ</h3>
+
+            <h5>Do I need to learn photography?</h5>
+            <p>
+                Yes — but if you can drive a car, you can take a group photo
+                with a modern camera.
+            </p>
+
+            <h5>How much does it cost?</h5>
+            <p>
+                It’s free to get started with no subscription. Candid9 charges a
+                fee on the transaction of only 5%, you keep 95% of revenue!
+            </p>
+
+            <h5>How will I know if it’s worth the effort?</h5>
+            <p>
+                This depends on your venue and your clientele. It may be
+                something you only offer on weekends or to groups that obviously
+                would love a photo!
+            </p>
+
+            <h5>What if guests don’t like their photo?</h5>
+            <p>
+                They simply won’t buy it. There’s no negotiations, refunds,
+                retakes, or any fuss. They look at the photo later and make
+                their decision without any pressure.
+            </p>
+
+            <h5>Can I set my own prices?</h5>
+            <p>Yes, you can custom pricing per photo.</p>
+
+            <h5>Do I need to buy a camera?</h5>
+            <p>
+                Yes, you’ll want to buy a camera. You don’t need to spend more
+                than $1300. I recommend a Sony a6400 camera body with a Sigma
+                30mm f/1.4 lens.
+            </p>
+
+            <h5>How do I get started?</h5>
+            <p>
+                Head to <a href="http://candid9.com">candid9.com</a>! It takes
+                about 10 minutes to be fully operational if you have a camera,
+                paper, a printer, and scissors.
+            </p>
+        </main>
+    </div>
+</BaseLayout>

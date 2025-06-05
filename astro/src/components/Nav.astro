@@ -7,6 +7,8 @@ import type { iconPaths } from "./IconPaths";
 const textLinks: { label: string; href: string }[] = [
 	{ label: "Home", href: "/" },
 	{ label: "Pricing", href: "/pricing/" },
+	{ label: "FAQ", href: "/faq/" },
+
 	{ label: "About", href: "/about/" },
 ];
 
@@ -43,7 +45,13 @@ const isCurrentPage = (href: string) => {
 
 <nav>
 	<div class="menu-header">
-		<a href="/" class="site-title"> Candid9 </a>
+		<a href="/" class="site-title">
+			<img
+				alt="Photo2"
+				style={{ height: "80px" }}
+				src="/assets/candid9-logo-horz-BLK.png"
+			/>
+		</a>
 		<menu-button>
 			<template>
 				<button class="menu-button" aria-expanded="false">
