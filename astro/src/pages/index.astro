@@ -4,24 +4,60 @@ import { getCollection } from "astro:content";
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-// Component Imports
-import CallToAction from "../components/CallToAction.astro";
-import Grid from "../components/Grid.astro";
-import Hero from "../components/Hero.astro";
-import Icon from "../components/Icon.astro";
-import Pill from "../components/Pill.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
-
-// Page section components
-import ContactCTA from "../components/ContactCTA.astro";
-import Skills from "../components/Skills.astro";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+/** Test if a link is pointing to the current page. */
 ---
 
+<script>
+	const urlSearchParams = new URLSearchParams(window.location.search);
+	const params = Object.fromEntries(urlSearchParams.entries());
+	const forVenuesEl = document?.getElementById("for-venues");
+	const forPhotographersEl = document?.getElementById("for-photographers");
+
+	if (forVenuesEl && params["for"] !== "venues") {
+		forVenuesEl.style.display = "none";
+	} else if (forPhotographersEl) {
+		forPhotographersEl.style.display = "none";
+	}
+
+	const forVenuesButton = document?.getElementById("for-venues-button");
+
+	const forParam = params["for"] ?? "venues";
+
+	if (forVenuesButton) {
+		if (forParam === "venues") {
+			forVenuesButton.style.backgroundColor = "rgb(199, 195, 172)";
+		} else {
+			forVenuesButton.style.backgroundColor = "rgb(238,239,244)";
+			forVenuesButton.style.color = "black";
+		}
+	}
+
+	const forPhotographersButton = document?.getElementById(
+		"for-photographers-button",
+	);
+	if (forPhotographersButton) {
+		if (forParam === "photographers") {
+			forPhotographersButton.style.backgroundColor = "rgb(199, 195, 172)";
+		} else {
+			forPhotographersButton.style.backgroundColor = "rgb(238,239,244)";
+			forPhotographersButton.style.color = "black";
+		}
+	}
+</script>
+
 <BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
+	<div class="button-group">
+		<a href="?for=venues" class={"left-button"} id="for-venues-button"
+			>For Venues</a
+		>
+		<a
+			href="?for=photographers"
+			class="right-button"
+			id="for-photographers-button">For Independent Photographers</a
+		>
+	</div>
+
+	<div id="for-venues" class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<div>
@@ -165,6 +201,157 @@ import Skills from "../components/Skills.astro";
 							Photographer later edits and uploads photos to the
 							Photo Sessions, using the QR Codes in the photos to
 							know which photos go where.
+						</li>
+						<li>Photographer publishes each Photo Session.</li>
+						<li>
+							Subject is notified when photos are published.
+							Watermarked photos can be viewed, watermark-free
+							available for purchase! (Photos can be free as well)
+						</li>
+					</ol>
+				</div>
+				<div style={{ height: `20px` }}></div>
+
+				<a
+					style={{ color: "blue" }}
+					aria-current={null}
+					class="link"
+					href="https://app.candid9.com">Login to get started!</a
+				>
+			</section>
+		</div>
+
+		<div class="wrapper"></div>
+	</div>
+
+	<div id="for-photographers" class="stack gap-20 lg:gap-48">
+		<div class="wrapper stack gap-8 lg:gap-20">
+			<header class="hero">
+				<div>
+					<h4 style={{ paddingBottom: `10px` }}>
+						Roaming Photography
+					</h4>
+					<p>
+						<p style={{ marginBottom: `20px` }}>
+							<b
+								>Do roaming photography on your off days to make
+								money and market your photography services!</b
+							>
+						</p>
+
+						<p style={{ marginBottom: `20px` }}>
+							Everyone loves a good photo, but scheduling a
+							photographer is tedious and expensive. Candid9 flips
+							the script: the photographer roams around and
+							initiates micro-sessions that can be as short as 30
+							seconds. Your subjects get professional photos at a
+							fraction of the cost, without any planning!
+						</p>
+
+						<p style={{ marginBottom: `20px` }}>
+							Work only the hours you want, no negotiations, no
+							refunds, no re-shoots, no re-edits, no angry emails!
+							Take great photos of people and they will sell.
+						</p>
+					</p>
+				</div>
+
+				<img
+					alt="Photo1"
+					width="480"
+					height="620"
+					src="/assets/photo1.jpg"
+				/>
+			</header>
+		</div>
+
+		<div class="wrapper">
+			<img
+				alt="Photo2"
+				style={{ maxHeight: "80%", width: "100%", maxWidth: "100%" }}
+				src="/assets/golf_group.jpg"
+			/>
+		</div>
+
+		<div class="wrapper">
+			<section>
+				<h4 class="section-title">Video Demo</h4>
+
+				<div style="padding:56.25% 0 0 0;position:relative;">
+					<iframe
+						width="100%"
+						height="500px"
+						src="https://player.vimeo.com/video/1048222289?h=275dfabfe3&badge=0&autopause=0&player_id=0&app_id=58479"
+						frameborder="0"
+						allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+						style="position:absolute;top:0;left:0;width:100%;height:100%;"
+						title="How to Candid9"></iframe>
+				</div><script src="https://player.vimeo.com/api/player.js"
+				></script>
+			</section>
+		</div>
+
+		<div class="wrapper">
+			<section>
+				<h4 class="section-title">How it Works</h4>
+
+				<div class="content">
+					<ol>
+						<li>
+							Photographer approaches and says "Hello! I'm the
+							photographer. Do you guys want a group photo?"
+						</li>
+						<li>Subject says "Yes!"</li>
+						<li>Photographer takes photos.</li>
+						<li>
+							Photographer hands ticket with QR Code and says "The
+							photos will be uploaded to this QR Code later. You
+							can scan the QR Code now and input your phone number
+							to be notified when I do the upload!"
+						</li>
+						<li>Subject says "Oh great that's cool, thank you!"</li>
+					</ol>
+				</div>
+			</section>
+		</div>
+
+		<div class="wrapper">
+			<section>
+				<h4 class="section-title">
+					How it Works (as the photographer)
+				</h4>
+				<div class="content">
+					<ol>
+						<li>
+							Photographer creates Candid9 account and creates
+							batch of 25 Photo Sessions.
+						</li>
+						<li>
+							Photographer prints out 25 Candid9 tickets, each has
+							a unique QR Code that points to a Photo Session.
+						</li>
+						<li>
+							Photographer approaches people saying "Hey you guys
+							look great, can I take your portrait and I'll share
+							it with you also?"
+						</li>
+						<li>Photographer takes photos of subjects.</li>
+						<li>
+							Photographer then takes a photo of a ticket before
+							handing to the subject, which matches QR Code (Photo
+							Session) to the subject.
+						</li>
+						<li>
+							Subject can scan QR Code right away and enter phone
+							number to be notified when photos are published.
+						</li>
+						<li>
+							Photographer repeats this until bored/tired/hungry.
+						</li>
+						<li>
+							Photographer later edits, prices, and uploads photos
+							to the Photo Sessions, using the QR Codes in the
+							photos to know which photos go where.
 						</li>
 						<li>Photographer publishes each Photo Session.</li>
 						<li>
@@ -331,5 +518,62 @@ import Skills from "../components/Skills.astro";
 			border-radius: 1.5rem;
 			height: 9.5rem;
 		}
+	}
+
+	.button-group {
+		display: flex;
+		gap: 00px;
+		justify-content: center;
+		padding: 20px;
+	}
+
+	.right-button {
+		display: inline-block;
+		padding: 12px 24px;
+		text-decoration: none;
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		border-radius: 0px 4px 4px 0px;
+		background-color: rgb(199, 195, 172);
+		color: white;
+		transition: background-color 0.3s;
+		border: none;
+	}
+
+	.right-button:hover {
+		background-color: rgb(199, 195, 172);
+	}
+
+	.right-button.secondary {
+		background-color: rgb(199, 195, 172);
+	}
+
+	.right-button.secondary:hover {
+		background-color: rgb(199, 195, 172);
+	}
+
+	.left-button {
+		display: inline-block;
+		padding: 12px 24px;
+		text-decoration: none;
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		border-radius: 4px 0px 0px 4px;
+		background-color: rgb(199, 195, 172);
+		color: white;
+		transition: background-color 0.3s;
+		border: none;
+	}
+
+	.left-button:hover {
+		background-color: rgb(199, 195, 172);
+	}
+
+	.left-button.secondary {
+		background-color: rgb(255, 253, 253);
+	}
+
+	.left-button.secondary:hover {
+		background-color: rgb(199, 195, 172);
 	}
 </style>

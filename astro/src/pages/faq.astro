@@ -9,50 +9,201 @@ import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
 ---
 
+<script>
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    const forVenuesEl = document?.getElementById("venue-faq");
+    const forPhotographersEl = document?.getElementById("photographer-faq");
+
+    if (forVenuesEl && params["for"] !== "venues") {
+        forVenuesEl.style.display = "none";
+    } else if (forPhotographersEl) {
+        forPhotographersEl.style.display = "none";
+    }
+
+    const forVenuesButton = document?.getElementById("for-venues-button");
+
+    const forParam = params["for"] ?? "venues";
+
+    if (forVenuesButton) {
+        if (forParam === "venues") {
+            forVenuesButton.style.backgroundColor = "rgb(199, 195, 172)";
+        } else {
+            forVenuesButton.style.backgroundColor = "rgb(238,239,244)";
+            forVenuesButton.style.color = "black";
+        }
+    }
+
+    const forPhotographersButton = document?.getElementById(
+        "for-photographers-button",
+    );
+    if (forPhotographersButton) {
+        if (forParam === "photographers") {
+            forPhotographersButton.style.backgroundColor = "rgb(199, 195, 172)";
+        } else {
+            forPhotographersButton.style.backgroundColor = "rgb(238,239,244)";
+            forPhotographersButton.style.color = "black";
+        }
+    }
+</script>
+
 <BaseLayout title="Pricing" description="Learn about Candid9 pricing">
     <div class="stack gap-20">
         <main class="wrapper stack gap-8">
             <h3>FAQ</h3>
 
-            <h5>Why should I provide this service for free?</h5>
-            <p>
-                In addition to sending your guests home with lasting memories,
-                the photos shared on social media provide excellent marketing
-                for your venue.
-            </p>
+            <div class="button-group">
+                <a
+                    href="?for=venues"
+                    class={"left-button"}
+                    id="for-venues-button">For Venues</a
+                >
+                <a
+                    href="?for=photographers"
+                    class="right-button"
+                    id="for-photographers-button"
+                    >For Independent Photographers</a
+                >
+            </div>
 
-            <h5>Do I need to learn photography?</h5>
-            <p>
-                Yes — but if you can drive a car, you can take a group photo
-                with a modern camera.
-            </p>
+            <span id="venue-faq" class="wrapper stack gap-8">
+                <h5>Why should I provide this service for free?</h5>
+                <p>
+                    In addition to sending your guests home with lasting
+                    memories, the photos shared on social media provide
+                    excellent marketing for your venue.
+                </p>
 
-            <h5>How much does it cost?</h5>
-            <p>
-                Candid9 costs $0.10 per photo, with a minimum monthly price of
-                $10.
-            </p>
+                <h5>Do I need to learn photography?</h5>
+                <p>
+                    Yes — but if you can drive a car, you can take a group photo
+                    with a modern camera.
+                </p>
 
-            <h5>How will I know if it’s worth the effort?</h5>
-            <p>
-                This depends on your venue and your clientele. It may be
-                something you only offer on weekends or to groups that obviously
-                would love a photo!
-            </p>
+                <h5>How much does it cost?</h5>
+                <p>
+                    Candid9 costs $0.10 per photo, with a minimum monthly price
+                    of $10.
+                </p>
 
-            <h5>Do I need to buy a camera?</h5>
-            <p>
-                Yes, you’ll want to buy a camera. You don’t need to spend more
-                than $1300. I recommend a Sony a6400 camera body with a Sigma
-                30mm f/1.4 lens.
-            </p>
+                <h5>How will I know if it’s worth the effort?</h5>
+                <p>
+                    This depends on your venue and your clientele. It may be
+                    something you only offer on weekends or to groups that
+                    obviously would love a photo!
+                </p>
 
-            <h5>How do I get started?</h5>
-            <p>
-                Head to <a href="http://candid9.com">candid9.com</a>! It takes
-                about 10 minutes to be fully operational if you have a camera,
-                paper, a printer, and scissors.
-            </p>
+                <h5>Do I need to buy a camera?</h5>
+                <p>
+                    Yes, you’ll want to buy a camera. You don’t need to spend
+                    more than $1300. I recommend a Sony a6400 camera body with a
+                    Sigma 30mm f/1.4 lens.
+                </p>
+
+                <h5>How do I get started?</h5>
+                <p>
+                    Head to <a href="http://candid9.com">candid9.com</a>! It
+                    takes about 10 minutes to be fully operational if you have a
+                    camera, paper, a printer, and scissors.
+                </p>
+            </span>
+
+            <span id="photographer-faq" class="wrapper stack gap-8">
+                <h5>How much does it cost?</h5>
+                <p>
+                    Candid9 has no subscription and only charges a 5% fee when a
+                    photo is purchased, with a minimum fee of $1.
+                </p>
+
+                <h5>How much can I make?</h5>
+                <p>
+                    It's up to you to take valuable photos. Factors include your
+                    hustle, your eye for great photo oppurtunities, and your
+                    subjects.
+                </p>
+
+                <h5>Can I market my photography services?</h5>
+                <p>
+                    Yes, you can configure an "About" page that can link to your
+                    portfolio.
+                </p>
+
+                <h5>What if guests don’t like their photo?</h5>
+                <p>
+                    They simply won’t buy it. There’s no negotiations, refunds,
+                    retakes, or any fuss. They look at the photo later and make
+                    their decision without any pressure.
+                </p>
+
+                <h5>Can I set my own prices?</h5>
+                <p>Yes, you can custom pricing per photo.</p>
+
+                <h5>How do I get started?</h5>
+                <p>
+                    Head to <a href="http://candid9.com">candid9.com</a>! It
+                    takes about 10 minutes to be fully operational if you have a
+                    camera, paper, a printer, and scissors.
+                </p>
+            </span>
         </main>
     </div>
 </BaseLayout>
+
+<style>
+    .button-group {
+        display: flex;
+        gap: 00px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .right-button {
+        display: inline-block;
+        padding: 12px 24px;
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        border-radius: 0px 4px 4px 0px;
+        background-color: rgb(199, 195, 172);
+        color: white;
+        transition: background-color 0.3s;
+        border: none;
+    }
+
+    .right-button:hover {
+        background-color: rgb(199, 195, 172);
+    }
+
+    .right-button.secondary {
+        background-color: rgb(199, 195, 172);
+    }
+
+    .right-button.secondary:hover {
+        background-color: rgb(199, 195, 172);
+    }
+
+    .left-button {
+        display: inline-block;
+        padding: 12px 24px;
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        border-radius: 4px 0px 0px 4px;
+        background-color: rgb(199, 195, 172);
+        color: white;
+        transition: background-color 0.3s;
+        border: none;
+    }
+
+    .left-button:hover {
+        background-color: rgb(199, 195, 172);
+    }
+
+    .left-button.secondary {
+        background-color: rgb(255, 253, 253);
+    }
+
+    .left-button.secondary:hover {
+        background-color: rgb(199, 195, 172);
+    }
+</style>
