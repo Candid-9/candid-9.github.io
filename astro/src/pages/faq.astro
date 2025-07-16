@@ -15,15 +15,15 @@ import Grid from "../components/Grid.astro";
     const forVenuesEl = document?.getElementById("venue-faq");
     const forPhotographersEl = document?.getElementById("photographer-faq");
 
-    if (forVenuesEl && params["for"] !== "venues") {
+    const forParam = params["for"] ?? "venues";
+
+    if (forVenuesEl && forParam !== "venues") {
         forVenuesEl.style.display = "none";
     } else if (forPhotographersEl) {
         forPhotographersEl.style.display = "none";
     }
 
     const forVenuesButton = document?.getElementById("for-venues-button");
-
-    const forParam = params["for"] ?? "venues";
 
     if (forVenuesButton) {
         if (forParam === "venues") {

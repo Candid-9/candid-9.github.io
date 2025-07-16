@@ -12,16 +12,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 	const params = Object.fromEntries(urlSearchParams.entries());
 	const forVenuesEl = document?.getElementById("for-venues");
 	const forPhotographersEl = document?.getElementById("for-photographers");
+	const forParam = params["for"] ?? "venues";
 
-	if (forVenuesEl && params["for"] !== "venues") {
+	if (forVenuesEl && forParam !== "venues") {
 		forVenuesEl.style.display = "none";
 	} else if (forPhotographersEl) {
 		forPhotographersEl.style.display = "none";
 	}
 
 	const forVenuesButton = document?.getElementById("for-venues-button");
-
-	const forParam = params["for"] ?? "venues";
 
 	if (forVenuesButton) {
 		if (forParam === "venues") {
